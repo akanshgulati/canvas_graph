@@ -1,0 +1,91 @@
+body{
+    margin:0;
+}
+h3{
+    background: #3498db;
+    padding: 30px;
+    margin: 0;
+    color: white;
+    border-bottom: 4px solid #c6c6c6;
+    text-align: center;
+}
+div#graph{
+    margin: auto;
+    width: inherit;
+    /* width: inherit; */
+    height: inherit;
+    width: 400px;
+}
+svg {
+    background-color: #FFF;
+    cursor: default;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+svg:not(.active):not(.ctrl) {
+    cursor: crosshair;
+}
+
+path.link {
+    fill: none;
+    stroke: #c6c6c6;
+    stroke-width: 2px;
+    cursor: default;
+}
+path.dotted {
+    fill: none;
+    stroke: #e67e22;
+    stroke-width: 4px;
+    stroke-dasharray: 10,2;
+}
+path.actual{
+    fill: none;
+    stroke: #f39c12;
+    stroke-width: 6px;
+}
+
+svg:not(.active):not(.ctrl) path.actual{
+    cursor: pointer;
+}
+
+path.actual.selected {
+    stroke-dasharray: 10,2;
+}
+
+path.dotted.dragline {
+    pointer-events: none;
+}
+
+path.link.hidden {
+    stroke-width: 0;
+}
+path.dotted.hidden {
+    stroke-width: 0;
+}
+
+circle.node {
+    stroke-width: 1.5px;
+    cursor: pointer;
+    fill: #3498db !important;
+    stroke: #2980b9 !important;
+}
+
+circle.node.reflexive {
+    stroke: #000 !important;
+    stroke-width: 2.5px;
+}
+
+text {
+    font: 12px sans-serif;
+    pointer-events: none;
+}
+
+text.id {
+    text-anchor: middle;
+    font-weight: bold;
+    fill: #ffffff;
+}
