@@ -1,9 +1,9 @@
 // set up SVG for D3
-var width  = 800,
-    height = 800,
+var width  = 400,
+    height = 400,
     colors = d3.scale.category10();
 
-var svg = d3.select('body')
+var svg = d3.select('div#graph')
     .append('svg')
     .attr('oncontextmenu', 'return false;')
     .attr('width', width)

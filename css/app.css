@@ -1,3 +1,21 @@
+body{
+    margin:0;
+}
+h3{
+    background: #3498db;
+    padding: 30px;
+    margin: 0;
+    color: white;
+    border-bottom: 4px solid #c6c6c6;
+    text-align: center;
+}
+div#graph{
+    margin: auto;
+    width: inherit;
+    /* width: inherit; */
+    height: inherit;
+    width: 400px;
+}
 svg {
     background-color: #FFF;
     cursor: default;
