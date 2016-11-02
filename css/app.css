@@ -89,3 +89,10 @@ text.id {
     font-weight: bold;
     fill: #ffffff;
 }
+#error{
+    width: 100%;
+    text-align: center;
+    color: #E57373;
+    opacity: 0;
+    transition: opacity 0.3s ease-out ;
+}

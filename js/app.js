@@ -289,11 +289,24 @@ function restart() {
             link = links.filter(function(l) {
                 return (l.source === source && l.target === target && l.left === (direction === 'left'));
             })[0];
-
+            var one_dir = true;
             if(link) {
                 //link[direction] = true;
-                actualLinks.push(link);
-                links.splice(links.map(function(link){return link.source === source && link.target === target}).indexOf(true),1);
+                actualLinks.map(function (l) {
+                   /* if(link.target.id === (link.left === l.left)? l.target.id:l.source.id){
+                        one_dir = false;
+                    }*/
+                   if(mousedown_node.id === (l.right ? l.source.id: l.target.id) || mouseup_node.id === (l.right?l.target.id : l.source.id)){
+                       one_dir = false;
+                       showError('Sorry, one node can have only one outbound and one inbound path.');
+                   }
+                });
+                if(one_dir){
+                    actualLinks.push(link);
+                    links.splice(links.map(function(link){return link.source === source && link.target === target}).indexOf(true),1);
+                }
+            }else{
+                showError('Sorry, path is not possible.');
             }
 
             // select new link
@@ -448,3 +461,14 @@ d3.select(window)
     .on('keydown', keydown)
     .on('keyup', keyup);
 restart();
+
+function showError(msg){
+    var error = document.querySelector('#error');
+    if(error.style.opacity === 0 || window.getComputedStyle(error).opacity === '0'){
+        error.style.opacity = 1;
+        error.innerHTML = msg;
+        setTimeout(function(){
+            error.style.opacity = 0 ;
+        },3000);
+    }
+}
