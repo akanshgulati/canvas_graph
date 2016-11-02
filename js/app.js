@@ -464,11 +464,9 @@ restart();
 
 function showError(msg){
     var error = document.querySelector('#error');
-    if(error.style.opacity === 0 || window.getComputedStyle(error).opacity === '0'){
-        error.style.opacity = 1;
-        error.innerHTML = msg;
-        setTimeout(function(){
-            error.style.opacity = 0 ;
-        },3000);
-    }
+    error.style.opacity = 1;
+    error.innerHTML = msg;
+    setTimeout(function(){
+        error.style.opacity = 0 ;
+    },3000);
 }
