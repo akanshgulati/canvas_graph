@@ -32,9 +32,15 @@ svg:not(.active):not(.ctrl) {
 
 path.link {
     fill: none;
-    stroke: #c6c6c6;
-    stroke-width: 2px;
-    cursor: default;
+    stroke: rgba(198, 198, 198, 1);
+    stroke-width: 3px;
+    cursor: pointer;
+}
+path.hover{
+    fill: none;
+    stroke-width: 3px;
+    stroke: rgb(56, 56, 56);
+    cursor: pointer;
 }
 path.dotted {
     fill: none;
